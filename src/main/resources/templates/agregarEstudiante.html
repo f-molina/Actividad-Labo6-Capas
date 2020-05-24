@@ -12,27 +12,27 @@
       <form th:action="@{/save}" th:object="${estudiante}" method="POST">
         <div class="form-group">
           <label>Nombre:</label>
-          <input class="form-control" type="text" th:field="*{nombre}" />
-          <span th:errors="*{nombre}" style="color: #e81505;"></span><br />
+          <input class="form-control" type="text" th:field="*{Nombre}" />
+          <span th:errors="*{Nombre}" style="color: #e81505;"></span><br />
         </div>
 
         <div class="form-group">
           <label>Apellido:</label>
-          <input class="form-control" type="text" th:field="*{apellido}" />
-          <span th:errors="*{apellido}" style="color: #e81505;"></span><br />
+          <input class="form-control" type="text" th:field="*{Apellido}" />
+          <span th:errors="*{Apellido}" style="color: #e81505;"></span><br />
         </div>
 
         <div class="form-group">
           <label>Edad (No menor de 18 anios):</label>
-          <input class="form-control" type="number" th:field="*{edad}" />
-          <span th:errors="*{edad}" style="color: #e81505;"></span><br />
+          <input class="form-control" type="number" th:field="*{Edad}" />
+          <span th:errors="*{Edad}" style="color: #e81505;"></span><br />
         </div>
 
         <div class="form-group">
           <label>Activo</label>
-          <input type="radio" th:field="*{estado}" th:value="${true}" />
+          <input type="radio" th:field="*{Estado}" th:value="${true}" />
           <label>Inactivo</label>
-          <input type="radio" th:field="*{estado}" th:value="${false}" /><br />
+          <input type="radio" th:field="*{Estado}" th:value="${false}" /><br />
         </div>
 
         <input class="btn btn-primary" type="submit" value="Guardar" />

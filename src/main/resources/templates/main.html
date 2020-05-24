@@ -8,6 +8,7 @@
 <body>
     <table>
         <thead>
+            <th>Codigo</th>
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Edad</th>
@@ -15,6 +16,7 @@
         </thead>
         <th:block th:each="estudiante, row:${estudiantes}">
             <tr>
+                <th th:text="${estudiante.codigoEstudiante}"/>
                 <th th:text="${estudiante.nombre}"/>
                 <th th:text="${estudiante.apellido}"/>
                 <th th:text="${estudiante.edad}"/>
