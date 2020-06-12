@@ -101,5 +101,29 @@ public class MainController {
 
         return mav;
     }
+
+    @PostMapping(value = "/filtrar")
+    public ModelAndView filtrado(@RequestParam(value = "nombre") String cadena) {
+        ModelAndView mav = new ModelAndView();
+        List<Estudiante> estudiantes = null;
+        try {
+            estudiantes = estudianteService.filtrarPor(cadena);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        mav.addObject("estudiantes", estudiantes);
+        mav.setViewName("main");
+        
+        return mav;
+    }    
+
+    @RequestMapping("/buscarEstudiante")
+	public ModelAndView buscarEstudiante(@RequestParam(value = "codigo") int id) {
+		ModelAndView mav = new ModelAndView();
+		Estudiante e = estudianteService.findOne(id);
+		mav.addObject("estudiante", e);
+		mav.setViewName("editarEstudiante");
+		return mav;
+	}
     
 }
